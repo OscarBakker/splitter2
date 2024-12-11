@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Container, Title } from "@mantine/core";
+import { nanoid } from "nanoid";
 import { TransactionForm } from "~/components/transactions/TransactionForm";
 import { TransactionList } from "~/components/transactions/TransactionList";
 
@@ -15,7 +16,7 @@ export default function Transactions() {
 
   const handleAddTransaction = (amount: number, member: string) => {
     const newTransaction: Transaction = {
-      id: crypto.randomUUID(),
+      id: nanoid(),
       amount,
       member,
       date: new Date(),
